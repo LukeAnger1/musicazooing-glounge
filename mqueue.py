@@ -244,7 +244,7 @@ class Fetcher:
 		self.ytdl_path = os.path.join(os.getenv("HOME"), ".local", "bin", "youtube-dl")
 
 	def _gen_cmdline(self, ytid: str, for_title: bool=False) -> list:
-            return [self.ytdl_path, "--no-playlist", "--id", "--no-progress", '--format', 'bestvideo[height<=1080][width<=1920][ext=mp4]+bestaudio[ext=m4a]/best[height<=1080][width<=1920][ext=mp4]/best[ext=mp4]'] + (["--get-title"] if for_title else []) + ["--", sanitize_ytid(ytid)]
+		return [self.ytdl_path, "--no-playlist", "--id", "--no-progress", '--format', 'bestvideo[height<=1080][width<=1920][ext=mp4]+bestaudio[ext=m4a]/best[height<=1080][width<=1920][ext=mp4]/best[ext=mp4]'] + (["--get-title"] if for_title else []) + ["--", sanitize_ytid(ytid)]
 
 	def get_title(self, ytid: str) -> str:
 		return subprocess.check_output(self._gen_cmdline(ytid, for_title=True)).strip()
