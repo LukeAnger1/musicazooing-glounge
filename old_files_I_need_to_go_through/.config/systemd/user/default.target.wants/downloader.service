@@ -1,0 +1,10 @@
+[Unit]
+Description=musicazoo downloader service
+
+[Service]
+EnvironmentFile=/home/musicazoo/musicazooing/config.env
+ExecStart=/usr/bin/python3 /home/musicazoo/musicazooing/downloader.py
+Restart=always
+
+[Install]
+WantedBy=default.target

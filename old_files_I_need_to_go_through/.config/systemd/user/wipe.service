@@ -1,0 +1,9 @@
+[Unit]
+Description=musicazoo wipe service
+
+[Service]
+ExecStart=/home/musicazoo/musicazooing/wipe.sh
+Restart=never
+
+[Install]
+WantedBy=default.target
