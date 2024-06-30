@@ -1,0 +1,22 @@
+In no particular order (though vaguely ordered in terms of "maybe this is
+easiest" first), stuff I'd like to get around to (but probably never will):
+
+Python and/or the entire stack:
+- [ ] Fork of musicazoo, and add the current changes to it.
+- [x] Reproduce and fix whatever the problems are?
+- [ ] Ansible-ize everything? (NixOS-ize everything? :P)
+- [ ] Non MP4 downloads.
+- [x] Video speed manipulation.
+- [ ] Download percentage, since they're sooooo slow now (why? is this an MIT
+      network thing?).
+- [ ] Video subtitles (download them too).
+- [ ] Allow some non-youtube things (vimeo would be nice to have).
+- [ ] Websockets support, not just polling.
+- [ ] Better disk-full-ness protection.
+- [ ] Queueing up a playlist.
+- [ ] Live streams.
+
+The webpage:
+- [ ] Make it look... slightly more decent.
+- [ ] "DOM diffing" to not replace all the HTML every time.
+    - https://github.com/google/incremental-dom looks fancy
