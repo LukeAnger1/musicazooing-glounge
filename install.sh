@@ -9,11 +9,12 @@ HERE=$(pwd)
 
 echo "=> Installing other debian packages"
 sudo apt update
-sudo apt install python3-pip redis-server mpv
+sudo apt install python3-pip redis-server mpv nginx libmpv-dev
 
 
 echo "=> Installing pip packages"
-pip3 install --user --upgrade cherrypy youtube-dl redis pyserial mplayer.py
+# IMPORTANT NOTE: The original code installs mpx using the apt package manager but the code uses a python import so I added the python-mpv, this may cause issues later
+pip3 install --user --upgrade cherrypy youtube-dl redis pyserial mplayer.py python-mpv
 
 
 echo "=> Creating systemd services"
@@ -32,7 +33,8 @@ done
 
 echo "=> Disabling unwanted programs"
 killall -q xscreensaver || true
-sed -i '/xscreensaver/d' $HOME/.config/lxsession/LXDE/autostart
+# IMPORTANT NOTE: temporarily removing this line
+# sed -i '/xscreensaver/d' $HOME/.config/lxsession/LXDE/autostart
 
 
 echo "=> Starting systemd services"
